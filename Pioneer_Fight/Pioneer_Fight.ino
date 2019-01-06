@@ -99,7 +99,8 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))     //0 0 0 0 0
   {
     // find line code something Bro :))
-    runRound(150, 100);
+ //   runRound(150, 100);
+    stop(); // Just for checking
   }
   
   
