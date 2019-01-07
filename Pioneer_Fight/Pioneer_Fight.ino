@@ -19,8 +19,8 @@
 #define motorRight1 9 //PWM
 #define motorRight2 10 // check more
 
-int line = 600;
-//int line[5] = {1,1,1,1,1}; // don't forget delete "line = 600"
+int line = 100;
+//int line[5] = {500,100,100,100,500}; // don't forget delete "line = 600"
 int sensor[5];
 
 void setup() {
@@ -77,7 +77,7 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   // else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]<line)&&(sensor[4]<line)) //0 0 0 1 1  
   // turnRight(80);// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]<line)&&(sensor[4]>line))    //0 0 0 1 0
-  turnRight(80);// lech trai
+  turnRight(100);// lech trai
   // else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]<line)&&(sensor[4]>line)) //0 0 1 1 0
   // error=1;// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 0 1 0 0
@@ -85,7 +85,7 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   // else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]<line)&&(sensor[3]<line)&&(sensor[4]>line)) //0 1 1 0 0
   // error=0;// line chu T
   else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 1 0 0 0
-  turnLeft(70);// lech phai
+  turnLeft(100);// lech phai
   // else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line)) //1 1 0 0 0
   // error=-1.5; // lech phai
   else if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //1 0 0 0 0
@@ -100,7 +100,7 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   {
     // find line code something Bro :))
  //   runRound(150, 100);
-    stop(); // Just for checking
+ //   stop(); // Just for checking
   }
   
   
