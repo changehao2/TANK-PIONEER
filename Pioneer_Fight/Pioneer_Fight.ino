@@ -78,7 +78,7 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   // turnRight(80);// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]<line)&&(sensor[4]>line))    //0 0 0 1 0
   // turnRight(100);
-  runRound(50, 100);// lech trai
+  runRound(100, 90);// lech trai
   // else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]<line)&&(sensor[4]>line)) //0 0 1 1 0
   // error=1;// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 0 1 0 0
@@ -87,7 +87,7 @@ if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sens
   // error=0;// line chu T
   else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 1 0 0 0
   // turnLeft(100)
-  runRound(100,50);// lech phai
+  runRound(90,100);// lech phai
   // else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line)) //1 1 0 0 0
   // error=-1.5; // lech phai
   else if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //1 0 0 0 0
