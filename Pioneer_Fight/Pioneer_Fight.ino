@@ -73,23 +73,25 @@ void detectLine(){
   int error;
 
 if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]<line))           //0 0 0 0 1
-  turnRight(120);// lech trai
+  turnRight(150);// lech trai
   // else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]<line)&&(sensor[4]<line)) //0 0 0 1 1  
   // turnRight(80);// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]<line)&&(sensor[4]>line))    //0 0 0 1 0
-  turnRight(100);// lech trai
+  // turnRight(100);
+  runRound(50, 100);// lech trai
   // else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]<line)&&(sensor[4]>line)) //0 0 1 1 0
   // error=1;// lech trai
   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 0 1 0 0
-  goStraight(100);// di thang
+  goStraight(120);// di thang
   // else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]<line)&&(sensor[3]<line)&&(sensor[4]>line)) //0 1 1 0 0
   // error=0;// line chu T
   else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //0 1 0 0 0
-  turnLeft(100);// lech phai
+  // turnLeft(100)
+  runRound(100,50);// lech phai
   // else if((sensor[0]>line)&&(sensor[1]<line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line)) //1 1 0 0 0
   // error=-1.5; // lech phai
   else if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))    //1 0 0 0 0
-  turnLeft(100);// lech phai
+  turnLeft(150);// lech phai
   // else if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]>line)&&(sensor[3]>line)&&(sensor[4]>line))
   // error=-2.5;// lech phai 
   // else if((sensor[0]<line)&&(sensor[1]<line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))
