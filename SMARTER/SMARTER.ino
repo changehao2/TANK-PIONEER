@@ -161,12 +161,12 @@ void detectBarrie(){
       stop();
       // delay(2000);
       while(dataSRF05() < 100){
-          CheckBarrie = false; // Make tank don't turn away
           do{
             stop();
           }while(dataSRF05() <20);
         goStraight(100); // change PWM here :))) and delay__ 
       delay(500);
+      CheckBarrie = false; // Make tank don't turn away
       } 
 }
 void detectWall()
