@@ -22,6 +22,7 @@ int line = 100;
 int sensor[5];
 boolean check=true;
 boolean CheckBarrie = true;
+boolean ignore = false;
 void setup()
 {
   pinMode(trig, OUTPUT);
@@ -75,13 +76,9 @@ void detectLine()
   // find line code something Bro :))
   // runRound(150, 100);
   // goStraight(150);
-  if ((sensor[0] > line) && (sensor[1] > line) && (sensor[2] < line) && (sensor[3] < line) && (sensor[4] < line))
-  // 0 0 1 1 1
-  //turnRight(220, 50);
-  checkLr();
-   else if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]<line))   //0 0 1 0 1
-   //turnRight(150,50);
-   checkLr();
+  if ((sensor[0] > line) && (sensor[1] < line) && (sensor[2] < line) && (sensor[3] < line) && (sensor[4] > line))
+    // 0 1 1 1 0
+  goStraight(255); // di thang
   else
     if ((sensor[0] > line) && (sensor[1] > line) && (sensor[2] > line) && (sensor[3] < line) && (sensor[4] < line))
     // 0 0 0 1 1
@@ -104,10 +101,12 @@ void detectLine()
     // 1 1 1 0 0
     //turnLeft(100, 220);
     checkLl();
-   else if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))   //1 0 1 0 0
+  else 
+     if((sensor[0]<line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]>line))   
+    //1 0 1 0 0
    //turnRight(50,150);
    checkLl();
-   else
+  else
     if ((sensor[0] < line) && (sensor[1] < line) && (sensor[2] > line) && (sensor[3] > line) && (sensor[4] > line))
     // 1 1 0 0 0
    turnLeft(100, 180);
@@ -128,11 +127,16 @@ void detectLine()
     if ((sensor[0] > line) && (sensor[1] > line) && (sensor[2] < line) && (sensor[3] > line) && (sensor[4] > line))
     // 0 0 1 0 0
     goStraight(255); // di thang
-  else
-    if ((sensor[0] > line) && (sensor[1] < line) && (sensor[2] < line) && (sensor[3] < line) && (sensor[4] > line))
-    // 0 1 1 1 0
-    goStraight(255); // di thang
-  // stop(); // Just for checking
+  else 
+    if ((sensor[0] > line) && (sensor[1] > line) && (sensor[2] < line) && (sensor[3] < line) && (sensor[4] < line))
+    // 0 0 1 1 1
+    //turnRight(220, 50);
+  checkLr();
+  else 
+    if((sensor[0]>line)&&(sensor[1]>line)&&(sensor[2]<line)&&(sensor[3]>line)&&(sensor[4]<line))   
+    //0 0 1 0 1
+    //turnRight(150,50);
+    checkLr();
 }
 
 void checkLr()
@@ -159,8 +163,8 @@ void checkLl()
 }
 void detectBarrie(){
       stop();
-      // delay(2000);
-      while(dataSRF05() < 100){
+      delay(2000);
+      while(dataSRF05() < 60){
           do{
             stop();
           }while(dataSRF05() <20);
